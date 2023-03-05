@@ -40,6 +40,7 @@ function getAkanName() {
 function main() {
     let dayOfTheWeek = userInfo();
     getAkanName();
+    console.log(akanName);
    }
 
 console.log (dayOfTheWeek);
