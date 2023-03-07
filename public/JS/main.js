@@ -37,11 +37,16 @@ function getAkanName() {
         else{
         console.log("Wrong date")
         }
+    return akanName;
 }
 
 function main(){
+    let akanName = getAkanName();
     userInfo();
     console.log("Your name is " + akanName);
   
 }
 main();
+
+
+
