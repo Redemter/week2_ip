@@ -3,7 +3,7 @@ const WEEK_DAYS=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday
 const MALE_NAMES=["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 const FEMALE_NAMES=["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 let akanName = null;
-let gender = null;
+
 
 function userInfo(){
     let yearOfBirth = prompt("Enter your year of birth:");
@@ -13,7 +13,9 @@ function userInfo(){
     let dateOfBirth = parseInt(prompt("Enter the date of birth:"));
     let gender = prompt("Enter your gender: ");
     let dayOfTheWeek = Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
-    return dayOfTheWeek;  
+    return dayOfTheWeek;
+    
+    console.log(dayOfTheWeek);
 }
 
 function calculateWeekDay(){ 
@@ -22,7 +24,7 @@ function calculateWeekDay(){
 }
 
 function getAkanName() { 
-    let dayOfTheWeek = calculateWeekDay();
+    let dayOfTheWeek = userInfo();
     
     if (gender =='f'){
     let akanName=FEMALE_NAMES[dayOfTheWeek];
@@ -37,18 +39,9 @@ function getAkanName() {
         }
 }
 
-function main() {
-    let dayOfTheWeek = userInfo();
-    getAkanName();
-    console.log(akanName);
-   }
-
-console.log (dayOfTheWeek);
-
-
-/*
-if (monthOfBirth>0 && monthOfBirth<13){
-    else {
-    console.log ("Enter the correct month number");
+function main(){
+    userInfo();
+    console.log("Your name is " + akanName);
+  
 }
-*/
+main();
