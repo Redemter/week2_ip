@@ -3,51 +3,37 @@ const WEEK_DAYS=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday
 const MALE_NAMES=["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 const FEMALE_NAMES=["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 let akanName = null;
-let gender = null;
+let gender = document.getElementById("gender");
 
+let form = document.getElementById("form");
+form.addEventListener('submit', function(event){
+    event.preventDefault();
 
-function userInfo(){
-    let yearOfBirth = prompt("Enter your year of birth:");
-    let century = parseInt(yearOfBirth.slice(0, 2));
-    let year = parseInt(yearOfBirth.slice(2, ));
-    let monthOfBirth = parseInt(prompt("Enter your month of birth:"));
-    let dateOfBirth = parseInt(prompt("Enter the date of birth:"));
-    let gender = prompt("Enter your gender: f or m ");
+    // let yearOfBirth = document.getElementById("date");
+    let century = 19;
+    let year = 20;
+    let monthOfBirth = 6;
+    let dateOfBirth = 6;  
+
     let dayOfTheWeek = Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
     return dayOfTheWeek;
     
     console.log(dayOfTheWeek);
-}
 
-function calculateWeekDay(){ 
-    let dayOfTheWeek = Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
-    return dayOfTheWeek;  
-}
 
 function getAkanName() { 
     let dayOfTheWeek = userInfo();
     
-    if (gender =='f'){
+    if (gender =='Female'){
     let akanName=FEMALE_NAMES[dayOfTheWeek];
     console.log (akanName);
         
-    }else if (gender =='m'){
+    }else if (gender =='Male'){
     let akanName=MALE_NAMES[dayOfTheWeek];
     console.log (akanName);
         }
         else{
-        console.log("Wrong date")
+        console.log("Name uknown");
         }
     return akanName;
 }
-
-function main(){
-    let akanName = getAkanName();
-    userInfo();
-    console.log("Your name is " + akanName);
-  
-}
-main();
-
-
-
