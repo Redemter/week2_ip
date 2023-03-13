@@ -10,21 +10,29 @@
 </head>
 <body>
     <div>
-        <p>Akan Name Generator</p>
+        <h1>Akan Name Generator</h1>
         <p> Do you want to know your Akan Name? With only your birth date and gender the Akan Names Generator script will tell you your Akan Name. </p>
         <p>Akan names are derived from Ghanian culture. Frequently in Ghana, children are given their first name as a 'day name' which corresponds to the day in the week they were born.</p>
-            </div>
+        </div>
 
-    <form id="form">
+    <div class="container"></div>
+    <form id="form" method="post">
+        <div class="field">
         <input type="date" name="birthday" id="birthday" required>
-       <select name="gender">
+
+       <select id="gender">
             <option value="none" selected>Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             </select>
-            <button type="submit">Click here to get your Akan Name</button>
+        </div>
+        <div class="field">
+            <button type="submit">Click here to get your Akan Name </button>
+        </div>
     </form>
+    </div>
 
     <script src="./public/JS/main.js"> </script>
 </body>
+
 </html>
