@@ -16,25 +16,26 @@ function getDayOfTheWeek(birthday){
     return Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
 }
 
+function generateAkanName(dayOfTheWeek,genderValue){
+    var akanName= "Unknown";
+    if (genderValue == "female"){
+        akanName=FEMALE_NAMES[dayOfTheWeek];
+        console.log (akanName);
+            
+    }else if (genderValue == "male"){
+        akanName=MALE_NAMES[dayOfTheWeek];
+        console.log (akanName);    
+    }
+    return akanName;
+}
+
 form.addEventListener('submit', function(event){
     event.preventDefault();
     birthday = document.getElementById("birthday").value;
     genderValue = document.getElementById("gender").value;
     const dayOfTheWeek = getDayOfTheWeek(birthday);
+    const akanName = generateAkanName(dayOfTheWeek, genderValue);
 
-    // var akanName = gender =="female"?FEMALE_NAMES[dayOfTheWeek]:MALE_NAMES[dayOfTheWeek];
-
-    if (genderValue == "female"){
-        var akanName=FEMALE_NAMES[dayOfTheWeek];
-        console.log (akanName);
-            
-    }else if (genderValue == "male"){
-        var akanName=MALE_NAMES[dayOfTheWeek];
-        console.log (akanName);
-    } else{
-            console.log("Name uknown");
-    }
-        
     var message = "Hello, <br>Your birth date is: <b>" + birthday +
                   ".</b><br> You were born on a <b>" + WEEK_DAYS[dayOfTheWeek]+ 
                   ".</b><br>Your Akan name is: <b>" + akanName +"</b>";
