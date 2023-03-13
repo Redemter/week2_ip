@@ -6,31 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./public/css/custom.css">
     <title>Akan Name Generator</title>
-
 </head>
+
 <body>
     <div>
         <h1>Akan Name Generator</h1>
         <p> Do you want to know your Akan Name? With only your birth date and gender the Akan Names Generator script will tell you your Akan Name. </p>
         <p>Akan names are derived from Ghanian culture. Frequently in Ghana, children are given their first name as a 'day name' which corresponds to the day in the week they were born.</p>
-        </div>
-
-    <div class="container"></div>
-    <form id="form" method="post">
-        <div class="field">
-        <input type="date" name="birthday" id="birthday" required>
-
-       <select id="gender">
-            <option value="none" selected>Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            </select>
-        </div>
-        <div class="field">
-            <button type="submit">Click here to get your Akan Name </button>
-        </div>
-    </form>
     </div>
+
+    <div class="container">
+        <form id="form" method="post">
+            <div class="field">
+                <input type="date" name="birthday" id="birthday" required>
+    
+                <select id="gender">
+                    <option value="none" selected>Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="field">
+                <button type="submit">Click here to get your Akan Name </button>
+            </div>
+        </form>
+    </div>
+
     <div>
         <p id="akanNameMessage">
             
@@ -39,5 +40,4 @@
 
     <script src="./public/JS/main.js"> </script>
 </body>
-
 </html>
