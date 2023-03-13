@@ -20,7 +20,8 @@ form.addEventListener('submit', function(event){
 
     let dayOfTheWeek = Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
 
-    console.log(dayOfTheWeek);
+    // var akanName = gender =="female"?FEMALE_NAMES[dayOfTheWeek]:MALE_NAMES[dayOfTheWeek];
+
     if (genderValue == "female"){
         var akanName=FEMALE_NAMES[dayOfTheWeek];
         console.log (akanName);
@@ -28,13 +29,17 @@ form.addEventListener('submit', function(event){
     }else if (genderValue == "male"){
         var akanName=MALE_NAMES[dayOfTheWeek];
         console.log (akanName);
-            }
-            else{
+    } else{
             console.log("Name uknown");
-            }
+    }
         
-            alert ("Hello, Your date is : " + birthday);
-            alert ("Hello, Your Akan name is : " + akanName);
-    
-    })
+    var message = "Hello, <br>Your birth date is: <b>" + birthday +
+                  ".</b><br> You were born on a <b>" + WEEK_DAYS[dayOfTheWeek]+ 
+                  ".</b><br>Your Akan name is: <b>" + akanName +"</b>";
+
+    var akanNameMessage = document.getElementById('akanNameMessage');
+
+    akanNameMessage.innerHTML +=message;
+             
+})
 
