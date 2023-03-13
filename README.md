@@ -17,11 +17,13 @@ Using your date of birth the Akan name generator will tell your Ghanian name.
 ## Setup Instructions
 
 - Access my repository: https://github.com/Redemter/week2_ip
-- Review
+Fork it
+Clone it to your local repository
+Review
 
 ## Live Link
 
-https://github.com/Redemter/week2_ip
+https://redemter.github.io/week2_ip/
 
 ## License and Copyright
 
