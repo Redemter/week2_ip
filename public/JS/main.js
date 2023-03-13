@@ -10,14 +10,17 @@ form.addEventListener('submit', function(event){
     birthday = document.getElementById("birthday").value;
     genderValue = document.getElementById("gender").value;
 
-    let yearOfBirth = document.getElementById("date");
-    let century = 18;
-    let year = 20;
-    let monthOfBirth = 6;
-    let dateOfBirth = 6;  
+    const dateArray = birthday.split("-");
+    let monthOfBirth = parseInt(dateArray[1]);
+    let dateOfBirth = parseInt(dateArray[2]);
+    let yearOfBirth = parseInt(dateArray[0]);
+    let century = Math.floor(yearOfBirth/100);
+    let year = yearOfBirth-(century*100);
+
 
     let dayOfTheWeek = Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
 
+    console.log(dayOfTheWeek);
     if (genderValue == "female"){
         var akanName=FEMALE_NAMES[dayOfTheWeek];
         console.log (akanName);
@@ -30,6 +33,7 @@ form.addEventListener('submit', function(event){
             console.log("Name uknown");
             }
         
+            alert ("Hello, Your date is : " + birthday);
             alert ("Hello, Your Akan name is : " + akanName);
     
     })
