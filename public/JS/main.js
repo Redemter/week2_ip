@@ -2,14 +2,13 @@
 const WEEK_DAYS=['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MALE_NAMES=["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 const FEMALE_NAMES=["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-let akanName = null;
-let dayOfTheWeek= null;
-let gender = document.getElementsByName("gender");
 
 let form = document.getElementById("form");
 
 form.addEventListener('submit', function(event){
     event.preventDefault();
+    birthday = document.getElementById("birthday").value;
+    genderValue = document.getElementById("gender").value;
 
     let yearOfBirth = document.getElementById("date");
     let century = 18;
