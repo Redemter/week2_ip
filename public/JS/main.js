@@ -5,11 +5,7 @@ const FEMALE_NAMES=["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
 let form = document.getElementById("form");
 
-form.addEventListener('submit', function(event){
-    event.preventDefault();
-    birthday = document.getElementById("birthday").value;
-    genderValue = document.getElementById("gender").value;
-
+function getDayOfTheWeek(birthday){
     const dateArray = birthday.split("-");
     let monthOfBirth = parseInt(dateArray[1]);
     let dateOfBirth = parseInt(dateArray[2]);
@@ -17,8 +13,14 @@ form.addEventListener('submit', function(event){
     let century = Math.floor(yearOfBirth/100);
     let year = yearOfBirth-(century*100);
 
+    return Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
+}
 
-    let dayOfTheWeek = Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7;
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    birthday = document.getElementById("birthday").value;
+    genderValue = document.getElementById("gender").value;
+    const dayOfTheWeek = getDayOfTheWeek(birthday);
 
     // var akanName = gender =="female"?FEMALE_NAMES[dayOfTheWeek]:MALE_NAMES[dayOfTheWeek];
 
