@@ -42,4 +42,3 @@ form.addEventListener('submit', function(event){
     akanNameMessage.innerHTML +=message;
              
 })
-
