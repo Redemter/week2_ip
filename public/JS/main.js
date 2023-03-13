@@ -33,6 +33,7 @@ form.addEventListener('submit', function(event){
     event.preventDefault();
     birthday = document.getElementById("birthday").value;
     genderValue = document.getElementById("gender").value;
+    
     const dayOfTheWeek = getDayOfTheWeek(birthday);
     const akanName = generateAkanName(dayOfTheWeek, genderValue);
 
