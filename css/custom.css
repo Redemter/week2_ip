@@ -1,0 +1,29 @@
+body {
+  background-color: azure;
+  font-size: large;
+  text-align: start;
+}
+h1 {
+  color: navy;
+  text-align: left;
+}
+h3 {
+  color: darkblue;
+  text-align: left;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+table {
+  border-style: double;
+  border-style: solid;
+}
+th,
+td {
+  border: 1px solid black;
+}
+div {
+  background-color: lightcyan;
+ }
+img {
+    float: none;
+}
