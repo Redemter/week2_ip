@@ -13,7 +13,8 @@ function getDayOfTheWeek(birthday){
     let century = Math.floor(yearOfBirth/100);
     let year = yearOfBirth-(century*100);
 
-    return (Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7) - 1;
+    var dayOfTheWeek = (Math.floor( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(monthOfBirth+1)/10)) + dateOfBirth ) % 7) - 1;
+    return dayOfTheWeek;
 }
 
 function generateAkanName(dayOfTheWeek,genderValue){
